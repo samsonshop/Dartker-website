@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Dartler">
+  <!--
+    Tab icon. The full "DARTLER" wordmark is unreadable at 16px (seven letters
+    across sixteen pixels), so this keeps the logo's signature banner silhouette
+    — the flat sides with a peak at top and bottom centre — and carries a single
+    bold D. The cream ground is deliberate: the mark is pure black, and a
+    transparent background would make it disappear into a dark browser theme.
+  -->
+  <rect width="64" height="64" rx="12" fill="#FDF9F5"/>
+  <path
+    d="M10 14 L32 5 L54 14 Q60 15.6 60 21 L60 43 Q60 48.4 54 50 L32 59 L10 50 Q4 48.4 4 43 L4 21 Q4 15.6 10 14 Z"
+    fill="#000000"/>
+  <path
+    d="M21 18 H33.5 C42.5 18 47 24 47 32 C47 40 42.5 46 33.5 46 H21 Z
+       M28.5 25 H33 C36.9 25 39 27.9 39 32 C39 36.1 36.9 39 33 39 H28.5 Z"
+    fill="#FFFFFF" fill-rule="evenodd"/>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F1E4E4"/>
+      <stop offset="100%" stop-color="#E3CFD0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.62">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#5B4038" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <rect width="800" height="800" fill="url(#glow)"/>
+  <g filter="url(#soft)">
+    <g transform="translate(400 410)">
+      <path d="M-120 -80 a120 120 0 0 1 240 0" fill="none" stroke="#6E5A52" stroke-width="20" stroke-linecap="round"/>
+      <path d="M-200 -70 h400 l-32 240 a30 30 0 0 1 -30 26 h-276 a30 30 0 0 1 -30 -26 z" fill="#8A6A55"/>
+      <rect x="-46" y="-40" width="92" height="60" rx="12" fill="#C2954E"/>
+      <rect x="-200" y="-70" width="400" height="22" fill="#FFFFFF" opacity="0.16"/>
+    </g></g>
+</svg>

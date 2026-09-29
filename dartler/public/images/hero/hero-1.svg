@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 720" width="1600" height="720" role="img">
+  <defs>
+    <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F6E3DD"/>
+      <stop offset="55%" stop-color="#EED3CB"/>
+      <stop offset="100%" stop-color="#E3BFB6"/>
+    </linearGradient>
+    <radialGradient id="hglow" cx="0.72" cy="0.35" r="0.55">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="720" fill="url(#hg)"/>
+  <rect width="1600" height="720" fill="url(#hglow)"/>
+  <g opacity="0.45" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <circle cx="1120" cy="330" r="255"/><circle cx="1120" cy="330" r="185"/>
+  </g>
+  <!-- Editorial still life: an arch plinth with a few signature pieces. -->
+  <g transform="translate(1120 340)">
+    <path d="M-215 190 v-150 a215 215 0 0 1 430 0 v150 z" fill="#FBF6F1" opacity="0.85"/>
+    <ellipse cx="0" cy="200" rx="300" ry="30" fill="#B98F84" opacity="0.22"/>
+    <g transform="translate(-6 -46) rotate(-14)">
+      <rect x="-150" y="-30" width="300" height="60" rx="30" fill="#4A3B36"/>
+      <rect x="-150" y="-30" width="300" height="20" rx="10" fill="#FFFFFF" opacity="0.18"/>
+      <circle cx="-80" cy="0" r="15" fill="#C2954E"/>
+      <circle cx="0" cy="0" r="15" fill="#C2954E" opacity="0.72"/>
+      <circle cx="80" cy="0" r="15" fill="#C2954E" opacity="0.46"/>
+    </g>
+    <g transform="translate(-150 96)">
+      <path d="M-60 -46 h120 l-12 130 h-96 z" fill="#8A6A55"/>
+      <path d="M-36 -46 a36 36 0 0 1 72 0" fill="none" stroke="#6E5A52" stroke-width="11"/>
+      <rect x="-16" y="-16" width="32" height="22" rx="6" fill="#C2954E"/>
+    </g>
+    <g transform="translate(140 108) rotate(8)">
+      <rect x="-96" y="-22" width="70" height="10" rx="5" fill="#4A3B36"/>
+      <rect x="26" y="-22" width="70" height="10" rx="5" fill="#4A3B36"/>
+      <rect x="-86" y="-30" width="86" height="62" rx="27" fill="#4A3B36"/>
+      <rect x="0" y="-30" width="86" height="62" rx="27" fill="#4A3B36"/>
+      <rect x="-78" y="-22" width="70" height="46" rx="21" fill="#7E6A61" opacity="0.8"/>
+      <rect x="8" y="-22" width="70" height="46" rx="21" fill="#7E6A61" opacity="0.8"/>
+    </g>
+    <g transform="translate(20 92)">
+      <rect x="-14" y="-96" width="28" height="130" rx="14" fill="#4A3B36"/>
+      <rect x="-15" y="-118" width="30" height="28" rx="8" fill="#C2954E"/>
+      <path d="M-17 -118 q17 -70 34 0 z" fill="#A98675"/>
+    </g>
+  </g>
+  <g opacity="0.3">
+    <path d="M120 620 q60 -120 150 -60 q-40 90 -150 60 z" fill="#FFFFFF"/>
+    <path d="M1470 100 q-70 60 -20 140 q80 -40 20 -140 z" fill="#FFFFFF"/>
+  </g>
+</svg>

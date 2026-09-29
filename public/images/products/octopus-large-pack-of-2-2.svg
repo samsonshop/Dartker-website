@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F1E4E4"/>
+      <stop offset="100%" stop-color="#E3CFD0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.62">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E4C489"/>
+      <stop offset="45%" stop-color="#C2954E"/>
+      <stop offset="100%" stop-color="#9A7233"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#5B4038" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <rect width="800" height="800" fill="url(#glow)"/>
+  <g filter="url(#soft)">
+    <g transform="translate(400 400) rotate(-6)">
+      <path d="M-236 -74 h290 a74 74 0 0 1 0 148 h-290 z" fill="#6E5A52"/>
+      <path d="M-214 -74 q14 -62 34 0 z" fill="#6E5A52"/><path d="M-168 -74 q14 -62 34 0 z" fill="#6E5A52"/><path d="M-122 -74 q14 -62 34 0 z" fill="#6E5A52"/><path d="M-76 -74 q14 -62 34 0 z" fill="#6E5A52"/><path d="M-30 -74 q14 -62 34 0 z" fill="#6E5A52"/><path d="M16 -74 q14 -62 34 0 z" fill="#6E5A52"/><path d="M62 -74 q14 -62 34 0 z" fill="#6E5A52"/><path d="M108 -74 q14 -62 34 0 z" fill="#6E5A52"/><path d="M154 -74 q14 -62 34 0 z" fill="#6E5A52"/>
+      <path d="M-192 74 q14 62 34 0 z" fill="#6E5A52"/><path d="M-146 74 q14 62 34 0 z" fill="#6E5A52"/><path d="M-100 74 q14 62 34 0 z" fill="#6E5A52"/><path d="M-54 74 q14 62 34 0 z" fill="#6E5A52"/><path d="M-8 74 q14 62 34 0 z" fill="#6E5A52"/><path d="M38 74 q14 62 34 0 z" fill="#6E5A52"/><path d="M84 74 q14 62 34 0 z" fill="#6E5A52"/><path d="M130 74 q14 62 34 0 z" fill="#6E5A52"/><path d="M176 74 q14 62 34 0 z" fill="#6E5A52"/>
+      <rect x="-232" y="-52" width="256" height="18" rx="9" fill="#FFFFFF" opacity="0.26"/>
+      <circle cx="72" cy="0" r="24" fill="#C2954E" opacity="0.6"/>
+      <circle cx="-190" cy="0" r="13" fill="#4A3B36" opacity="0.28"/>
+    </g></g>
+</svg>

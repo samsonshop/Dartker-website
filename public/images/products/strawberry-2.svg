@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EFE7E2"/>
+      <stop offset="100%" stop-color="#E0D2C9"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.62">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E4C489"/>
+      <stop offset="45%" stop-color="#C2954E"/>
+      <stop offset="100%" stop-color="#9A7233"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#5B4038" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <rect width="800" height="800" fill="url(#glow)"/>
+  <g filter="url(#soft)"><g transform="translate(400 360)"><path d="M0 -40 C 120 -40 156 60 92 152 C 56 202 -56 202 -92 152 C -156 60 -120 -40 0 -40 Z" fill="#C0323B"/>
+         <ellipse cx="-70" cy="-4" rx="9" ry="13" fill="#C2954E" opacity="0.85"/><ellipse cx="-24" cy="-4" rx="9" ry="13" fill="#C2954E" opacity="0.85"/><ellipse cx="22" cy="-4" rx="9" ry="13" fill="#C2954E" opacity="0.85"/><ellipse cx="68" cy="-4" rx="9" ry="13" fill="#C2954E" opacity="0.85"/><ellipse cx="-70" cy="48" rx="9" ry="13" fill="#C2954E" opacity="0.85"/><ellipse cx="-24" cy="48" rx="9" ry="13" fill="#C2954E" opacity="0.85"/><ellipse cx="22" cy="48" rx="9" ry="13" fill="#C2954E" opacity="0.85"/><ellipse cx="68" cy="48" rx="9" ry="13" fill="#C2954E" opacity="0.85"/><ellipse cx="-70" cy="100" rx="9" ry="13" fill="#C2954E" opacity="0.85"/><ellipse cx="-24" cy="100" rx="9" ry="13" fill="#C2954E" opacity="0.85"/><ellipse cx="22" cy="100" rx="9" ry="13" fill="#C2954E" opacity="0.85"/>
+         <path d="M-84 -50 l40 -46 l30 40 l32 -50 l30 52 l42 -34 l-24 62 z" fill="#5C7A45"/>
+      
+  <g transform="translate(0 214)">
+    <rect x="-30" y="-8" width="60" height="118" rx="16" fill="url(#metal)"/>
+    <rect x="-30" y="-8" width="60" height="40" rx="16" fill="#FFFFFF" opacity="0.22"/>
+    <path d="M-52 96 h104 l-16 44 h-72 z" fill="#9A7233"/>
+  </g>
+    </g></g>
+</svg>

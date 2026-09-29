@@ -1,0 +1,45 @@
+'use client';
+
+import { useState } from 'react';
+import { ChevronDown } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+export function FaqAccordion({ items }: { items: { question: string; answer: string }[] }) {
+  const [open, setOpen] = useState<number | null>(0);
+
+  return (
+    <ul className="divide-y divide-taupe-100 overflow-hidden rounded-2xl border border-taupe-100 bg-white">
+      {items.map((item, index) => {
+        const expanded = open === index;
+        return (
+          <li key={item.question}>
+            <h3>
+              <button
+                type="button"
+                aria-expanded={expanded}
+                aria-controls={`faq-panel-${index}`}
+                onClick={() => setOpen(expanded ? null : index)}
+                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-medium text-charcoal-700 transition-colors hover:bg-ivory-50"
+              >
+                {item.question}
+                <ChevronDown
+                  className={cn(
+                    'h-4 w-4 shrink-0 text-charcoal-400 transition-transform duration-200',
+                    expanded && 'rotate-180',
+                  )}
+                />
+              </button>
+            </h3>
+            <div
+              id={`faq-panel-${index}`}
+              hidden={!expanded}
+              className="px-5 pb-4 text-sm leading-relaxed text-charcoal-500"
+            >
+              {item.answer}
+            </div>
+          </li>
+        );
+      })}
+    </ul>
+  );
+}

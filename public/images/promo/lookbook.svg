@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 520" width="1400" height="520" role="img">
+  <defs>
+    <linearGradient id="pg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F4E5DC"/><stop offset="100%" stop-color="#E9CFC4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="520" fill="url(#pg)"/>
+  <g transform="translate(1030 270)" opacity="0.95">
+    <ellipse cx="0" cy="170" rx="300" ry="36" fill="#B98F84" opacity="0.25"/>
+    <g transform="translate(-190 0)"><path d="M-90 -60 h180 l-16 210 h-148 z" fill="#8A6A55"/><path d="M-54 -60 a54 54 0 0 1 108 0" fill="none" stroke="#6E5A52" stroke-width="14"/></g>
+    <g transform="translate(40 40) rotate(-12)"><rect x="-140" y="-30" width="280" height="58" rx="29" fill="#4A3B36"/><circle cx="-70" cy="0" r="14" fill="#C2954E"/><circle cx="0" cy="0" r="14" fill="#C2954E" opacity="0.7"/><circle cx="70" cy="0" r="14" fill="#C2954E" opacity="0.45"/></g>
+    <g transform="translate(230 20)"><rect x="-20" y="-40" width="40" height="190" rx="20" fill="#4A3B36"/><rect x="-21" y="-72" width="42" height="40" rx="10" fill="#C2954E"/><path d="M-24 -72 q24 -96 48 0 z" fill="#A98675"/></g>
+  </g>
+  <g opacity="0.3" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <circle cx="250" cy="140" r="90"/><circle cx="180" cy="400" r="60"/>
+  </g>
+</svg>

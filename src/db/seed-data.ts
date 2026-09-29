@@ -1,0 +1,740 @@
+/** Catalogue content used by `npm run db:seed`. Prices are in paise. */
+
+export interface SeedCategory {
+  slug: string;
+  name: string;
+  description: string;
+  accent: string;
+  sortOrder: number;
+  /** Cover art. Defaults to the generated `/images/categories/<slug>.svg`. */
+  image?: string;
+}
+
+export interface SeedProduct {
+  name: string;
+  category: string;
+  price: number;
+  compareAt?: number;
+  short: string;
+  description: string;
+  specs: { label: string; value: string }[];
+  colors: [string, string][];
+  sizes?: string[];
+  rating: number;
+  ratingCount: number;
+  sold: number;
+  stock: number;
+  featured?: boolean;
+  hsn: string;
+  weight: number;
+}
+
+export const SEED_CATEGORIES: SeedCategory[] = [
+  {
+    slug: 'hair-clips',
+    image: '/images/categories/hair-clips.jpg',
+    name: 'Hair Clips',
+    description: 'Stylish clips for every hair day — matte, gloss and pearl finishes.',
+    accent: '#EBBDB8',
+    sortOrder: 1,
+  },
+  {
+    slug: 'hair-clutches',
+    image: '/images/categories/hair-clutches.jpg',
+    name: 'Hair Clutch Clips',
+    description: 'Strong-grip clutches that hold thick hair all day without pulling.',
+    accent: '#DFA09A',
+    sortOrder: 2,
+  },
+  {
+    slug: 'scrunchies',
+    image: '/images/categories/scrunchies.jpg',
+    name: 'Scrunchies',
+    description: 'Satin and velvet scrunchies that hold without a crease.',
+    accent: '#C4637C',
+    sortOrder: 3,
+  },
+  {
+    slug: 'hair-bands',
+    image: '/images/categories/hair-bands.jpg',
+    name: 'Hair Bands & Headbands',
+    description: 'Padded, knotted and embellished bands for effortless polish.',
+    accent: '#CDBBA8',
+    sortOrder: 4,
+  },
+  {
+    slug: 'combs',
+    image: '/images/categories/combs.jpg',
+    name: 'Combs',
+    description: 'Wide-tooth, tail and detangling combs in wood and carbon fibre.',
+    accent: '#B49B84',
+    sortOrder: 5,
+  },
+  {
+    slug: 'makeup-brushes',
+    image: '/images/categories/makeup-brushes.jpg',
+    name: 'Makeup Brushes',
+    description: 'Soft synthetic bristles, weighted handles, salon-grade blending.',
+    accent: '#DBB877',
+    sortOrder: 6,
+  },
+  {
+    slug: 'jewelry-organizers',
+    image: '/images/categories/jewelry-organizers.jpg',
+    name: 'Jewelry Organizers',
+    description: 'Velvet-lined trays and stackable cases for everyday pieces.',
+    accent: '#C99A54',
+    sortOrder: 7,
+  },
+  {
+    slug: 'earrings',
+    image: '/images/categories/earrings.jpg',
+    name: 'Earrings',
+    description: 'Studs, hoops and drops that finish a look without shouting.',
+    accent: '#D4A15C',
+    sortOrder: 8,
+  },
+  {
+    slug: 'keychains',
+    image: '/images/categories/keychains.jpg',
+    name: 'Keychains',
+    description: 'Leather, metal and resin keyrings that survive daily use.',
+    accent: '#B9883C',
+    sortOrder: 9,
+  },
+  {
+    slug: 'mobile-holders',
+    image: '/images/categories/mobile-holders.jpg',
+    name: 'Mobile Holders',
+    description: 'Desk stands and wall mounts that keep a phone within reach.',
+    accent: '#6E8B74',
+    sortOrder: 10,
+  },
+  {
+    slug: 'other',
+    image: '/images/categories/other.jpg',
+    name: 'Other',
+    description: 'Everything else worth carrying — the pieces that defy a shelf.',
+    accent: '#9A8C7E',
+    sortOrder: 11,
+  },
+];
+
+const BEIGE: [string, string] = ['Beige', '#D9C4B4'];
+const BLACK: [string, string] = ['Black', '#2B2825'];
+const WHITE: [string, string] = ['White', '#F4EFE9'];
+const BROWN: [string, string] = ['Brown', '#7A5A47'];
+const WINE_C: [string, string] = ['Wine', '#8E2F45'];
+const GOLD_C: [string, string] = ['Gold', '#C99A54'];
+const BLUSH_C: [string, string] = ['Blush', '#EBBDB8'];
+const IVORY: [string, string] = ['Ivory', '#F7F1E8'];
+const TAUPE_C: [string, string] = ['Taupe', '#B49B84'];
+const NAVY: [string, string] = ['Navy', '#2C3A4B'];
+
+function spec(...pairs: [string, string][]) {
+  return pairs.map(([label, value]) => ({ label, value }));
+}
+
+export const SEED_PRODUCTS: SeedProduct[] = [
+  // ---------------------------------------------------------- hair clips
+  {
+    name: 'Crystal Hair Clip',
+    category: 'hair-clips',
+    price: 44900,
+    compareAt: 69900,
+    short: 'Faceted crystal clip with a gold-tone spring hinge.',
+    description:
+      'A jewel-set clip that catches the light without catching your hair. The spring hinge is rated for 20,000 openings and the teeth are individually polished, so it grips a half-up twist all evening and lifts out cleanly.',
+    specs: spec(
+      ['Material', 'Acrylic with glass crystals'],
+      ['Dimensions', '8 cm x 3 cm x 4 cm'],
+      ['Weight', '28 g'],
+      ['Finish', 'Hand-polished'],
+    ),
+    colors: [BEIGE, BLUSH_C, IVORY],
+    rating: 4.6,
+    ratingCount: 330,
+    sold: 482,
+    stock: 64,
+    featured: true,
+    hsn: '9615',
+    weight: 40,
+  },
+  {
+    name: 'Matte Claw Clip',
+    category: 'hair-clips',
+    price: 39900,
+    compareAt: 59900,
+    short: 'Everyday matte claw with a soft-touch finish.',
+    description:
+      'The one you reach for on a Tuesday. A matte, fingerprint-resistant shell over a steel spring, shaped so it sits flat against the head instead of jutting out.',
+    specs: spec(
+      ['Material', 'Cellulose acetate'],
+      ['Dimensions', '9 cm x 3.5 cm x 4.5 cm'],
+      ['Weight', '32 g'],
+      ['Hold', 'Medium to thick hair'],
+    ),
+    colors: [BLACK, BEIGE, BROWN],
+    rating: 4.3,
+    ratingCount: 210,
+    sold: 356,
+    stock: 42,
+    featured: true,
+    hsn: '9615',
+    weight: 45,
+  },
+  {
+    name: 'Floral Hair Clip',
+    category: 'hair-clips',
+    price: 44900,
+    short: 'Hand-painted floral detail on a slim rectangular clip.',
+    description:
+      'Each floral face is painted and sealed by hand, so no two clips are identical. Slim enough to wear two side by side.',
+    specs: spec(['Material', 'Resin'], ['Dimensions', '7.5 cm x 2.5 cm'], ['Weight', '22 g']),
+    colors: [BLUSH_C, IVORY],
+    rating: 4.8,
+    ratingCount: 187,
+    sold: 240,
+    stock: 28,
+    hsn: '9615',
+    weight: 35,
+  },
+  {
+    name: 'Gold Claw Clip',
+    category: 'hair-clips',
+    price: 59900,
+    compareAt: 79900,
+    short: 'Gold-tone metal claw with a weighted, jewellery-grade feel.',
+    description:
+      'Solid metal rather than plated plastic — it has real heft and stays put in fine hair, which lighter claws never manage.',
+    specs: spec(['Material', 'Zinc alloy, gold plated'], ['Dimensions', '8 cm x 3 cm'], ['Weight', '58 g']),
+    colors: [GOLD_C],
+    rating: 4.5,
+    ratingCount: 344,
+    sold: 198,
+    stock: 19,
+    hsn: '9615',
+    weight: 70,
+  },
+  {
+    name: 'Resin Claw Clip',
+    category: 'hair-clips',
+    price: 39900,
+    short: 'Marbled resin claw, each one uniquely veined.',
+    description:
+      'Poured in small batches so the marbling never repeats. Light enough for all-day wear at a desk.',
+    specs: spec(['Material', 'Marbled resin'], ['Dimensions', '8.5 cm x 3 cm'], ['Weight', '30 g']),
+    colors: [BEIGE, TAUPE_C, BROWN],
+    rating: 4.2,
+    ratingCount: 156,
+    sold: 174,
+    stock: 51,
+    hsn: '9615',
+    weight: 42,
+  },
+  {
+    name: 'Mini Claw Clip Set of 6',
+    category: 'hair-clips',
+    price: 34900,
+    compareAt: 49900,
+    short: 'Six mini claws for braids, twists and half-ups.',
+    description:
+      'A set of six 4 cm claws in a graduated neutral palette. Small enough to section hair while styling, pretty enough to leave in.',
+    specs: spec(['Material', 'Acrylic'], ['Pack size', '6 clips'], ['Dimensions', '4 cm each']),
+    colors: [BEIGE, BLUSH_C, BROWN],
+    rating: 4.4,
+    ratingCount: 198,
+    sold: 310,
+    stock: 88,
+    hsn: '9615',
+    weight: 60,
+  },
+
+  // ------------------------------------------------------- hair clutches
+  {
+    name: 'Classic Hair Clutch Clip',
+    category: 'hair-clutches',
+    price: 29900,
+    compareAt: 49900,
+    short: 'The everyday clutch — secure hold, rounded teeth, no snag.',
+    description:
+      'This elegant hair clutch clip is designed for a secure hold and all-day comfort. Crafted from high-quality acrylic, it features a durable spring hinge and smooth, rounded teeth that grip gently without causing damage. Perfect for everyday use or special occasions.',
+    specs: spec(
+      ['Material', 'Acrylic'],
+      ['Dimensions', '8 cm x 4 cm x 5 cm'],
+      ['Weight', '25 g'],
+      ['Hinge', 'Stainless steel spring'],
+    ),
+    colors: [BEIGE, BLACK, WHITE, BROWN],
+    sizes: ['Standard', 'Large'],
+    rating: 4.5,
+    ratingCount: 320,
+    sold: 612,
+    stock: 96,
+    featured: true,
+    hsn: '9615',
+    weight: 38,
+  },
+  {
+    name: 'Pearl Clutch Clip',
+    category: 'hair-clutches',
+    price: 54900,
+    compareAt: 74900,
+    short: 'Freshwater-look pearls set along a matte spine.',
+    description:
+      'Understated enough for the office, dressy enough for a wedding. The pearls are set into recessed cups so they do not catch on knitwear.',
+    specs: spec(['Material', 'Acrylic with faux pearls'], ['Dimensions', '9 cm x 4 cm'], ['Weight', '36 g']),
+    colors: [IVORY, BEIGE],
+    rating: 4.7,
+    ratingCount: 142,
+    sold: 188,
+    stock: 33,
+    hsn: '9615',
+    weight: 50,
+  },
+  {
+    name: 'Tortoise Shell Clutch',
+    category: 'hair-clutches',
+    price: 49900,
+    short: 'Warm tortoise pattern in a classic banana silhouette.',
+    description:
+      'A pattern that flatters every hair colour, in the banana shape that holds a French twist properly.',
+    specs: spec(['Material', 'Cellulose acetate'], ['Dimensions', '10 cm x 4 cm'], ['Weight', '40 g']),
+    colors: [BROWN, TAUPE_C],
+    rating: 4.4,
+    ratingCount: 96,
+    sold: 130,
+    stock: 24,
+    hsn: '9615',
+    weight: 52,
+  },
+  {
+    name: 'Velvet Bow Clutch',
+    category: 'hair-clutches',
+    price: 59900,
+    short: 'Velvet bow mounted on a strong-grip clutch base.',
+    description:
+      'The bow is stitched — not glued — to a full-size clutch base, so it survives being thrown in a handbag.',
+    specs: spec(['Material', 'Velvet, acrylic base'], ['Dimensions', '11 cm x 6 cm'], ['Weight', '44 g']),
+    colors: [WINE_C, BLACK, BLUSH_C],
+    rating: 4.6,
+    ratingCount: 78,
+    sold: 92,
+    stock: 8,
+    hsn: '9615',
+    weight: 58,
+  },
+
+  // ---------------------------------------------------------- scrunchies
+  {
+    name: 'Satin Scrunchies Pack of 6',
+    category: 'scrunchies',
+    price: 69900,
+    compareAt: 99900,
+    short: 'Six satin scrunchies that hold without a crease.',
+    description:
+      'Satin slides against the hair cuticle instead of gripping it, so you get hold without the kink or the breakage an elastic leaves behind. Six tonal shades that go with everything.',
+    specs: spec(['Material', 'Satin polyester'], ['Pack size', '6 scrunchies'], ['Diameter', '11 cm']),
+    colors: [BLUSH_C, IVORY, WINE_C, BLACK],
+    rating: 4.6,
+    ratingCount: 412,
+    sold: 298,
+    stock: 120,
+    featured: true,
+    hsn: '9615',
+    weight: 80,
+  },
+  {
+    name: 'Velvet Scrunchie Trio',
+    category: 'scrunchies',
+    price: 44900,
+    short: 'Three plush velvet scrunchies in deep evening tones.',
+    description:
+      'Thick velvet with a wide elastic core — the kind that actually holds a thick ponytail rather than sliding down it.',
+    specs: spec(['Material', 'Velvet'], ['Pack size', '3 scrunchies'], ['Diameter', '12 cm']),
+    colors: [WINE_C, BLACK, NAVY],
+    rating: 4.5,
+    ratingCount: 168,
+    sold: 210,
+    stock: 74,
+    hsn: '9615',
+    weight: 60,
+  },
+  {
+    name: 'Oversized Silk Scrunchie',
+    category: 'scrunchies',
+    price: 39900,
+    short: 'One statement scrunchie, mulberry-silk finish.',
+    description:
+      'A single oversized scrunchie meant to be seen. Gentle enough to sleep in.',
+    specs: spec(['Material', 'Mulberry silk blend'], ['Diameter', '15 cm'], ['Weight', '18 g']),
+    colors: [IVORY, BLUSH_C],
+    rating: 4.3,
+    ratingCount: 88,
+    sold: 96,
+    stock: 40,
+    hsn: '9615',
+    weight: 28,
+  },
+
+  // ---------------------------------------------------------- hair bands
+  {
+    name: 'Padded Velvet Headband',
+    category: 'hair-bands',
+    price: 49900,
+    compareAt: 69900,
+    short: 'Wide padded band that stays put without pinching.',
+    description:
+      'The padding is what makes this wearable for a whole day — most wide bands press on the same two points behind the ears, this one spreads the pressure.',
+    specs: spec(['Material', 'Velvet over foam'], ['Width', '4 cm'], ['Fit', 'One size']),
+    colors: [WINE_C, BLACK, BEIGE],
+    rating: 4.5,
+    ratingCount: 204,
+    sold: 254,
+    stock: 46,
+    featured: true,
+    hsn: '9615',
+    weight: 45,
+  },
+  {
+    name: 'Knotted Turban Band',
+    category: 'hair-bands',
+    price: 39900,
+    short: 'Soft jersey band with a centre knot.',
+    description: 'Stretchy jersey with a hidden elastic panel — good for workouts and washdays alike.',
+    specs: spec(['Material', 'Cotton jersey'], ['Width', '6 cm'], ['Fit', 'Stretch, one size']),
+    colors: [BLACK, BEIGE, BLUSH_C],
+    rating: 4.2,
+    ratingCount: 122,
+    sold: 168,
+    stock: 62,
+    hsn: '9615',
+    weight: 35,
+  },
+  {
+    name: 'Pearl Embellished Hair Band',
+    category: 'hair-bands',
+    price: 64900,
+    short: 'Scattered pearls on a slim metal band.',
+    description: 'For occasions. A slim band that disappears into the hair and leaves only the pearls visible.',
+    specs: spec(['Material', 'Metal, faux pearls'], ['Width', '1 cm'], ['Weight', '30 g']),
+    colors: [IVORY, GOLD_C],
+    rating: 4.7,
+    ratingCount: 64,
+    sold: 74,
+    stock: 15,
+    hsn: '9615',
+    weight: 40,
+  },
+  {
+    name: 'Sports Hair Band Set of 4',
+    category: 'hair-bands',
+    price: 29900,
+    short: 'Non-slip silicone-lined bands for the gym.',
+    description: 'A silicone strip on the inside face keeps these from creeping backwards mid-run.',
+    specs: spec(['Material', 'Nylon with silicone grip'], ['Pack size', '4 bands'], ['Width', '2 cm']),
+    colors: [BLACK, WHITE],
+    rating: 4.1,
+    ratingCount: 156,
+    sold: 220,
+    stock: 90,
+    hsn: '9615',
+    weight: 30,
+  },
+
+  // --------------------------------------------------------------- combs
+  {
+    name: 'Wooden Detangling Comb',
+    category: 'combs',
+    price: 34900,
+    compareAt: 49900,
+    short: 'Neem wood, wide teeth, hand-sanded edges.',
+    description:
+      'Wide-set neem wood teeth glide through wet hair without the static a plastic comb generates. Each tooth is sanded by hand, which is why there is no seam to snag on.',
+    specs: spec(['Material', 'Neem wood'], ['Length', '18 cm'], ['Teeth', 'Wide-set']),
+    colors: [BROWN],
+    rating: 4.7,
+    ratingCount: 288,
+    sold: 340,
+    stock: 70,
+    featured: true,
+    hsn: '9615',
+    weight: 55,
+  },
+  {
+    name: 'Carbon Fibre Tail Comb',
+    category: 'combs',
+    price: 29900,
+    short: 'Heat-resistant tail comb for precise parting.',
+    description: 'Anti-static carbon fibre rated to 230°C, so it can sit against a styling iron without warping.',
+    specs: spec(['Material', 'Carbon fibre'], ['Length', '22 cm'], ['Heat resistance', 'Up to 230°C']),
+    colors: [BLACK],
+    rating: 4.4,
+    ratingCount: 132,
+    sold: 186,
+    stock: 55,
+    hsn: '9615',
+    weight: 30,
+  },
+  {
+    name: 'Pocket Folding Comb',
+    category: 'combs',
+    price: 19900,
+    short: 'Folds flat into a wallet or clutch.',
+    description: 'A small thing done properly — the hinge is metal, not moulded plastic, so it does not snap.',
+    specs: spec(['Material', 'ABS with metal hinge'], ['Folded length', '9 cm'], ['Weight', '18 g']),
+    colors: [BLACK, BROWN],
+    rating: 4.0,
+    ratingCount: 74,
+    sold: 128,
+    stock: 110,
+    hsn: '9615',
+    weight: 22,
+  },
+
+  // ------------------------------------------------------ makeup brushes
+  {
+    name: 'Makeup Brush Set of 12',
+    category: 'makeup-brushes',
+    price: 129900,
+    compareAt: 189900,
+    short: 'Twelve synthetic brushes with a travel roll.',
+    description:
+      'A complete face and eye set: four face brushes, seven eye brushes and a precision liner, all synthetic so they work with cream and powder alike. The roll is included, not an upsell.',
+    specs: spec(
+      ['Bristles', 'Synthetic taklon'],
+      ['Handle', 'Weighted birch wood'],
+      ['Pieces', '12 brushes + roll'],
+      ['Cruelty free', 'Yes'],
+    ),
+    colors: [BLACK, BEIGE, WINE_C],
+    rating: 4.7,
+    ratingCount: 980,
+    sold: 356,
+    stock: 38,
+    featured: true,
+    hsn: '9603',
+    weight: 320,
+  },
+  {
+    name: 'Foundation Blending Brush',
+    category: 'makeup-brushes',
+    price: 49900,
+    short: 'Dense, flat-top buffing brush for a seamless base.',
+    description: 'Densely packed so it buffs rather than streaks. Holds its shape after 100+ washes.',
+    specs: spec(['Bristles', 'Synthetic'], ['Length', '17 cm'], ['Shape', 'Flat top']),
+    colors: [BLACK, BEIGE],
+    rating: 4.5,
+    ratingCount: 240,
+    sold: 208,
+    stock: 44,
+    hsn: '9603',
+    weight: 45,
+  },
+  {
+    name: 'Angled Contour Brush',
+    category: 'makeup-brushes',
+    price: 39900,
+    short: 'Angled head that follows the cheekbone.',
+    description: 'The angle does the work — hold it flat against the cheek and it sits exactly where contour belongs.',
+    specs: spec(['Bristles', 'Synthetic'], ['Length', '16 cm'], ['Shape', 'Angled']),
+    colors: [BLACK, WINE_C],
+    rating: 4.4,
+    ratingCount: 176,
+    sold: 164,
+    stock: 58,
+    hsn: '9603',
+    weight: 40,
+  },
+  {
+    name: 'Eye Blending Brush Trio',
+    category: 'makeup-brushes',
+    price: 59900,
+    compareAt: 79900,
+    short: 'Three tapered blending brushes in graduated sizes.',
+    description: 'Crease, transition and detail, in the three sizes that actually get used.',
+    specs: spec(['Bristles', 'Synthetic'], ['Pieces', '3 brushes'], ['Length', '15 cm each']),
+    colors: [BEIGE, BLACK],
+    rating: 4.6,
+    ratingCount: 138,
+    sold: 142,
+    stock: 36,
+    hsn: '9603',
+    weight: 70,
+  },
+
+  // -------------------------------------------------- jewelry organizers
+  {
+    name: 'Velvet Jewelry Tray',
+    category: 'jewelry-organizers',
+    price: 99900,
+    compareAt: 139900,
+    short: 'Nine-compartment velvet tray for rings and studs.',
+    description: 'Nine compartments in the sizes jewellery actually comes in, lined in a velvet that does not shed.',
+    specs: spec(['Material', 'Velvet lined MDF'], ['Compartments', '9'], ['Dimensions', '24 x 18 x 4 cm']),
+    colors: [WINE_C, BEIGE, BLACK],
+    rating: 4.6,
+    ratingCount: 118,
+    sold: 124,
+    stock: 30,
+    featured: true,
+    hsn: '4202',
+    weight: 480,
+  },
+  {
+    name: 'Travel Jewelry Case',
+    category: 'jewelry-organizers',
+    price: 129900,
+    short: 'Zip case with a necklace hook column and ring rolls.',
+    description: 'The hook column is the part that matters — chains arrive untangled, which is not true of flat cases.',
+    specs: spec(['Material', 'PU leather'], ['Closure', 'Zip'], ['Dimensions', '17 x 12 x 8 cm']),
+    colors: [BLUSH_C, BLACK, TAUPE_C],
+    rating: 4.7,
+    ratingCount: 84,
+    sold: 96,
+    stock: 22,
+    hsn: '4202',
+    weight: 320,
+  },
+  {
+    name: 'Stackable Ring Box',
+    category: 'jewelry-organizers',
+    price: 69900,
+    short: 'Two stackable trays with a clear lid.',
+    description: 'Stack them or use them side by side; the lid is clear so you can see what is inside without opening.',
+    specs: spec(['Material', 'Acrylic and velvet'], ['Trays', '2'], ['Dimensions', '15 x 15 x 6 cm']),
+    colors: [IVORY, BLUSH_C],
+    rating: 4.3,
+    ratingCount: 52,
+    sold: 68,
+    stock: 41,
+    hsn: '4202',
+    weight: 260,
+  },
+
+  // ------------------------------------------------------------ keychains
+  {
+    name: 'Leather Tassel Keychain',
+    category: 'keychains',
+    price: 39900,
+    compareAt: 54900,
+    short: 'Leather tassel on a gold-tone split ring.',
+    description: 'Big enough to find in a bag by touch alone, which is the entire job of a keychain charm.',
+    specs: spec(['Material', 'Genuine leather'], ['Length', '12 cm'], ['Ring', 'Gold tone']),
+    colors: [BROWN, WINE_C, BEIGE],
+    rating: 4.3,
+    ratingCount: 118,
+    sold: 168,
+    stock: 82,
+    hsn: '4205',
+    weight: 40,
+  },
+  {
+    name: 'Resin Charm Keyring',
+    category: 'keychains',
+    price: 29900,
+    short: 'Marbled resin charm with a lobster clasp.',
+    description: 'Poured in small batches, so each charm has its own marbling.',
+    specs: spec(['Material', 'Resin'], ['Length', '9 cm'], ['Clasp', 'Lobster']),
+    colors: [BLUSH_C, IVORY, TAUPE_C],
+    rating: 4.1,
+    ratingCount: 66,
+    sold: 112,
+    stock: 95,
+    hsn: '3926',
+    weight: 30,
+  },
+  {
+    name: 'Metal Monogram Keychain',
+    category: 'keychains',
+    price: 49900,
+    short: 'Brushed metal disc with a raised initial.',
+    description: 'Solid brushed brass with a raised initial — no printing to rub off.',
+    specs: spec(['Material', 'Brushed brass'], ['Diameter', '3.5 cm'], ['Finish', 'Anti-tarnish']),
+    colors: [GOLD_C, BLACK],
+    rating: 4.4,
+    ratingCount: 92,
+    sold: 104,
+    stock: 60,
+    hsn: '8308',
+    weight: 45,
+  },
+];
+
+export const SEED_REVIEW_SNIPPETS: { rating: number; title: string; body: string }[] = [
+  {
+    rating: 5,
+    title: 'Exactly as pictured',
+    body: 'Absolutely love the quality and design. Arrived well packed and looks even better in person.',
+  },
+  {
+    rating: 5,
+    title: 'Worth every rupee',
+    body: 'Fast delivery and great packaging. This is my second order from Dartler and the quality is consistent.',
+  },
+  {
+    rating: 4,
+    title: 'Very good',
+    body: 'Beautiful product and finish. Took a day longer than the estimate to arrive but no complaints otherwise.',
+  },
+  {
+    rating: 5,
+    title: 'Highly recommend',
+    body: 'Been using it daily for a month, still looks new. Recommended it to two friends already.',
+  },
+  {
+    rating: 4,
+    title: 'Good buy',
+    body: 'Does what it says. Slightly smaller than I imagined, but that turned out to be a good thing.',
+  },
+  {
+    rating: 5,
+    title: 'Gorgeous',
+    body: 'Bought it as a gift and ended up ordering one for myself too. The finish is lovely.',
+  },
+];
+
+export const SEED_TESTIMONIALS = [
+  {
+    name: 'Priya Sharma',
+    avatar: '/images/avatars/priya.svg',
+    rating: 5,
+    quote:
+      'Absolutely love the quality and design. The hair clutches hold my thick hair all day without a single snag.',
+    location: 'Chennai',
+  },
+  {
+    name: 'Neha Kapoor',
+    avatar: '/images/avatars/neha.svg',
+    rating: 5,
+    quote: 'Fast delivery and beautiful packaging. Ordered on Monday, it was on my desk by Wednesday.',
+    location: 'Bengaluru',
+  },
+  {
+    name: 'Ritika Singh',
+    avatar: '/images/avatars/ritika.svg',
+    rating: 5,
+    quote: 'Beautiful products and the prices are honest. The brush set is better than ones twice the cost.',
+    location: 'Coimbatore',
+  },
+  {
+    name: 'Ananya Iyer',
+    avatar: '/images/avatars/ananya.svg',
+    rating: 4,
+    quote: 'Great range of accessories in one place, and returns were painless when a size did not fit.',
+    location: 'Hyderabad',
+  },
+];
+
+export const SEED_CUSTOMERS = [
+  { fullName: 'Priya Sharma', email: 'priya@example.com', phone: '+919876543210', city: 'Chennai', state: 'Tamil Nadu', pincode: '600028' },
+  { fullName: 'Rohan Mehta', email: 'rohan@example.com', phone: '+919198877665', city: 'Mumbai', state: 'Maharashtra', pincode: '400050' },
+  { fullName: 'Neha Kapoor', email: 'neha@example.com', phone: '+919176543298', city: 'Bengaluru', state: 'Karnataka', pincode: '560034' },
+  { fullName: 'Ananya Singh', email: 'ananya@example.com', phone: '+919676123456', city: 'Hyderabad', state: 'Telangana', pincode: '500081' },
+  { fullName: 'Vikram Rao', email: 'vikram@example.com', phone: '+919543210987', city: 'Coimbatore', state: 'Tamil Nadu', pincode: '641004' },
+  { fullName: 'Simran Kaur', email: 'simran@example.com', phone: '+919821109876', city: 'New Delhi', state: 'Delhi', pincode: '110016' },
+  { fullName: 'Arjun Mehta', email: 'arjun@example.com', phone: '+919933210765', city: 'Pune', state: 'Maharashtra', pincode: '411001' },
+  { fullName: 'Pooja Sharma', email: 'pooja@example.com', phone: '+919123456789', city: 'Kochi', state: 'Kerala', pincode: '682016' },
+  { fullName: 'Ritika Singh', email: 'ritika@example.com', phone: '+919812345670', city: 'Jaipur', state: 'Rajasthan', pincode: '302001' },
+  { fullName: 'Karthik Iyer', email: 'karthik@example.com', phone: '+919845098450', city: 'Madurai', state: 'Tamil Nadu', pincode: '625001' },
+];
